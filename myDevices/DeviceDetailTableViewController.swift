@@ -24,31 +24,31 @@ import UIKit
 import CoreData
 
 class DeviceDetailTableViewController: UITableViewController {
-  var device: NSManagedObject?
-  var managedObjectContext: NSManagedObjectContext!
-
-  @IBOutlet weak var nameTextField: UITextField!
-  @IBOutlet weak var deviceTypeTextField: UITextField!
-  @IBOutlet weak var deviceOwnerLabel: UILabel!
-
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-
-    if let device = device {
-      nameTextField.text = device.valueForKey("name") as? String
-      deviceTypeTextField.text = device.valueForKey("deviceType") as? String
+    var device: Device?
+    var managedObjectContext: NSManagedObjectContext!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var deviceTypeTextField: UITextField!
+    @IBOutlet weak var deviceOwnerLabel: UILabel!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let device = device {
+            nameTextField.text = device.name
+            deviceTypeTextField.text = device.deviceType
+        }
     }
-  }
-
-  override func viewWillDisappear(animated: Bool) {
-    // need to add a device?
-    if device == nil {
-      if let name = nameTextField.text, deviceType = deviceTypeTextField.text, entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext) where !name.isEmpty && !deviceType.isEmpty {
-        device = NSManagedObject(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
-        device?.setValue(name, forKey: "name")
-        device?.setValue(deviceType, forKey: "deviceType")
-      }
+    
+    override func viewWillDisappear(animated: Bool) {
+        // need to add a device?
+        if device == nil {
+            if let name = nameTextField.text, deviceType = deviceTypeTextField.text, entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext) where !name.isEmpty && !deviceType.isEmpty {
+                device = Device(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+                device?.name = name
+                device?.deviceType = deviceType
+            }
+        }
     }
-  }
-
+    
 }

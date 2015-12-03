@@ -24,50 +24,50 @@ import UIKit
 import CoreData
 
 class PeopleTableViewController: UITableViewController {
-  var managedObjectContext: NSManagedObjectContext!
-  var people = [NSManagedObject]()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    title = "People"
-
-    reloadData()
-  }
-
-  func reloadData() {
-    let fetchRequest = NSFetchRequest(entityName: "Person")
-
-    do {
-      if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
-        people = results
-      }
-    } catch {
-      fatalError("There was an error fetching the list of people!")
+    var managedObjectContext: NSManagedObjectContext!
+    var people = [NSManagedObject]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "People"
+        
+        reloadData()
     }
-
-    tableView.reloadData()
-  }
-
-  // MARK: - Table view data source
-
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-  }
-
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return people.count
-  }
-
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath)
-
-    let person = people[indexPath.row]
-    if let name = person.valueForKey("name") as? String {
-      cell.textLabel?.text = name
+    
+    func reloadData() {
+        let fetchRequest = NSFetchRequest(entityName: "Person")
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
+                people = results
+            }
+        } catch {
+            fatalError("There was an error fetching the list of people!")
+        }
+        
+        tableView.reloadData()
     }
-
-    return cell
-  }
-
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return people.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath)
+        
+        let person = people[indexPath.row]
+        if let name = person.valueForKey("name") as? String {
+            cell.textLabel?.text = name
+        }
+        
+        return cell
+    }
+    
 }

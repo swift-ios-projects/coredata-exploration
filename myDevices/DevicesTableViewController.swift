@@ -24,72 +24,82 @@ import UIKit
 import CoreData
 
 class DevicesTableViewController: UITableViewController {
-  var managedObjectContext: NSManagedObjectContext!
-  var devices = [NSManagedObject]()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    title = "Devices"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addDevice:")
-  }
-
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-
-    reloadData()
-    tableView.reloadData()
-  }
-
-  func reloadData() {
-    let fetchRequest = NSFetchRequest(entityName: "Device")
-
-    do {
-      if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
-        devices = results
-      }
-    } catch {
-      fatalError("There was an error fetching the list of devices!")
-    }
-  }
-
-  // MARK: - Table view data source
-
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-  }
-
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return devices.count
-  }
-
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell", forIndexPath: indexPath)
-
-    let device = devices[indexPath.row]
-    if let deviceName = device.valueForKey("name") as? String, deviceType = device.valueForKey("deviceType") as? String {
-      cell.textLabel?.text = deviceName
-      cell.detailTextLabel?.text = deviceType
+    var managedObjectContext: NSManagedObjectContext!
+    var devices = [Device]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Devices"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addDevice:")
     }
     
-    return cell
-  }
-
-  // MARK: - Actions & Segues
-
-  func addDevice(sender: AnyObject?) {
-    performSegueWithIdentifier("deviceDetail", sender: self)
-  }
-
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let dest = segue.destinationViewController as? DeviceDetailTableViewController {
-      dest.managedObjectContext = managedObjectContext
-
-      if let selectedIndexPath = tableView.indexPathForSelectedRow {
-        let device = devices[selectedIndexPath.row]
-        dest.device = device
-      }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadData()
+        tableView.reloadData()
     }
-  }
-  
+    
+    func reloadData() {
+        let fetchRequest = NSFetchRequest(entityName: "Device")
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Device] {
+                devices = results
+            }
+        } catch {
+            fatalError("There was an error fetching the list of devices!")
+        }
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return devices.count
+    }
+    
+    // Setting the cells for each device using Core Data Values from the app delegate
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCell", forIndexPath: indexPath)
+        
+        let device = devices[indexPath.row]
+        
+        // The next 2 lines simplifies the setting of table cell variables. This is possible because we created subclasses for both Person and Device in Core Data and added those subclasses to the application. 
+        // > Person.swift & Device.swift
+        // It replaces the code block that is commented out below.
+        cell.textLabel?.text = device.name
+        cell.detailTextLabel?.text = device.deviceType
+        
+        /* Depricated Code -->
+        if let deviceName = device.valueForKey("name") as? String, deviceType = device.valueForKey("deviceType") as? String {
+            cell.textLabel?.text = deviceName
+            cell.detailTextLabel?.text = deviceType
+        }
+        */
+        
+        return cell
+    }
+    
+    // MARK: - Actions & Segues
+    
+    func addDevice(sender: AnyObject?) {
+        performSegueWithIdentifier("deviceDetail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dest = segue.destinationViewController as? DeviceDetailTableViewController {
+            dest.managedObjectContext = managedObjectContext
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                let device = devices[selectedIndexPath.row]
+                dest.device = device
+            }
+        }
+    }
+    
 }
