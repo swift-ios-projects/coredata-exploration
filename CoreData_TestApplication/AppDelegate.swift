@@ -37,13 +37,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("There was a fetch error")
         }
         
+        let personFetchRequest = NSFetchRequest(entityName: "Person")
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(personFetchRequest) as? [NSManagedObject] {
+                for result in results {
+                    if let name = result.valueForKey("name") as? String {
+                        print("This Preson is \(name)")
+                    }
+                }
+            }
+        } catch {
+            print("There was a fetch error")
+        }
+
+        
         return true
     }
 
     
     // A function to add the test data to Core Data
     func addTestData() {
-        guard let entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext) else {
+        guard let entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext), personEntity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext) else {
             fatalError("Could not find entity description")
         }
         
@@ -54,6 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             device.setValue("Some Device #\(i)", forKey: "name")
             device.setValue(i % 3 == 0 ? "Watch" : "iPhone", forKey: "deviceType")
         }
+        
+        let bob = NSManagedObject(entity: personEntity, insertIntoManagedObjectContext: managedObjectContext)
+        bob.setValue("Bob", forKey: "name")
+        let jane = NSManagedObject(entity: personEntity, insertIntoManagedObjectContext: managedObjectContext)
+        jane.setValue("Jane", forKey: "name")
+
     }
     
     
