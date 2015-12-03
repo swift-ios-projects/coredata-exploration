@@ -17,9 +17,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        addTestData()
+        
+        // The rest of this block of code achieves a *fetch request*, this is what will print the test data to the console.
+        // The point of this code is to show how to *fetch data from Core Data*
+        let fetchRequest = NSFetchRequest(entityName: "Device")
+        
+        do {
+            if let results = try managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
+                for result in results {
+                    if let deviceType = result.valueForKey("deviceType") as? String, name = result.valueForKey("name") as? String {
+                        print("Got \(deviceType) names \(name)")
+                    }
+                }
+            }
+            
+        } catch {
+            print("There was a fetch error")
+        }
+        
         return true
     }
 
+    
+    // A function to add the test data to Core Data
+    func addTestData() {
+        guard let entity = NSEntityDescription.entityForName("Device", inManagedObjectContext: managedObjectContext) else {
+            fatalError("Could not find entity description")
+        }
+        
+        // inserts device names and description based on their order in the for loop
+        // Note: not saved for now...
+        for i in 1...25 {
+            let device = NSManagedObject(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+            device.setValue("Some Device #\(i)", forKey: "name")
+            device.setValue(i % 3 == 0 ? "Watch" : "iPhone", forKey: "deviceType")
+        }
+    }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
