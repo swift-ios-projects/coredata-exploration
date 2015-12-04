@@ -11,8 +11,8 @@ import Foundation
 import CoreData
 
 extension Person {
-
+    
     @NSManaged var name: String
     @NSManaged var devices: NSSet
-
+    
 }

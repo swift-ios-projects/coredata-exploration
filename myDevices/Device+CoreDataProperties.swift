@@ -11,9 +11,9 @@ import Foundation
 import CoreData
 
 extension Device {
-
+    
     @NSManaged var deviceType: String
     @NSManaged var name: String
     @NSManaged var owner: Person?
-
+    
 }
