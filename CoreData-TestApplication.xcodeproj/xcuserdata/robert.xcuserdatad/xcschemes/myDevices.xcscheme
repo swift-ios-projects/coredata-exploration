@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78BB8AC11B7D6C54007F73C3"
-               BuildableName = "CoreData_TestApplication.app"
-               BlueprintName = "CoreData_TestApplication"
-               ReferencedContainer = "container:CoreData_TestApplication.xcodeproj">
+               BuildableName = "CoreData-TestApplication.app"
+               BlueprintName = "CoreData-TestApplication"
+               ReferencedContainer = "container:CoreData-TestApplication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78BB8AC11B7D6C54007F73C3"
-            BuildableName = "CoreData_TestApplication.app"
-            BlueprintName = "CoreData_TestApplication"
-            ReferencedContainer = "container:CoreData_TestApplication.xcodeproj">
+            BuildableName = "CoreData-TestApplication.app"
+            BlueprintName = "CoreData-TestApplication"
+            ReferencedContainer = "container:CoreData-TestApplication.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78BB8AC11B7D6C54007F73C3"
-            BuildableName = "CoreData_TestApplication.app"
-            BlueprintName = "CoreData_TestApplication"
-            ReferencedContainer = "container:CoreData_TestApplication.xcodeproj">
+            BuildableName = "CoreData-TestApplication.app"
+            BlueprintName = "CoreData-TestApplication"
+            ReferencedContainer = "container:CoreData-TestApplication.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78BB8AC11B7D6C54007F73C3"
-            BuildableName = "CoreData_TestApplication.app"
-            BlueprintName = "CoreData_TestApplication"
-            ReferencedContainer = "container:CoreData_TestApplication.xcodeproj">
+            BuildableName = "CoreData-TestApplication.app"
+            BlueprintName = "CoreData-TestApplication"
+            ReferencedContainer = "container:CoreData-TestApplication.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

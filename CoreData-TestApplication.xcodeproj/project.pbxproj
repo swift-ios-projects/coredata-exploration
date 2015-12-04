@@ -15,14 +15,14 @@
 		78BB8AD31B7D6C54007F73C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BB8AD11B7D6C54007F73C3 /* LaunchScreen.storyboard */; };
 		78BB8ADB1B7E4A2F007F73C3 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8ADA1B7E4A2F007F73C3 /* PeopleTableViewController.swift */; };
 		78BB8ADD1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */; };
-		E170801B1C10221500B30F39 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17080171C10221500B30F39 /* Person+CoreDataProperties.swift */; };
-		E170801C1C10221500B30F39 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17080181C10221500B30F39 /* Person.swift */; };
-		E170801D1C10221500B30F39 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17080191C10221500B30F39 /* Device+CoreDataProperties.swift */; };
-		E170801E1C10221500B30F39 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170801A1C10221500B30F39 /* Device.swift */; };
+		78BB8AF21B7E685A007F73C3 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */; };
+		78BB8AF31B7E685A007F73C3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AEF1B7E685A007F73C3 /* Person.swift */; };
+		78BB8AF41B7E685A007F73C3 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */; };
+		78BB8AF51B7E685A007F73C3 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB8AF11B7E685A007F73C3 /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		78BB8AC21B7D6C54007F73C3 /* CoreData_TestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData_TestApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BB8AC21B7D6C54007F73C3 /* CoreData-TestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-TestApplication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78BB8AC51B7D6C54007F73C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78BB8AC71B7D6C54007F73C3 /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
 		78BB8ACA1B7D6C54007F73C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,10 +32,10 @@
 		78BB8AD41B7D6C54007F73C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78BB8ADA1B7E4A2F007F73C3 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 		78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailTableViewController.swift; sourceTree = "<group>"; };
-		E17080171C10221500B30F39 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E17080181C10221500B30F39 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		E17080191C10221500B30F39 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E170801A1C10221500B30F39 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78BB8AEF1B7E685A007F73C3 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78BB8AF11B7E685A007F73C3 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		78BB8AC31B7D6C54007F73C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78BB8AC21B7D6C54007F73C3 /* CoreData_TestApplication.app */,
+				78BB8AC21B7D6C54007F73C3 /* CoreData-TestApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,10 +68,10 @@
 		78BB8AC41B7D6C54007F73C3 /* myDevices */ = {
 			isa = PBXGroup;
 			children = (
-				E17080171C10221500B30F39 /* Person+CoreDataProperties.swift */,
-				E17080181C10221500B30F39 /* Person.swift */,
-				E17080191C10221500B30F39 /* Device+CoreDataProperties.swift */,
-				E170801A1C10221500B30F39 /* Device.swift */,
+				78BB8AEE1B7E685A007F73C3 /* Person+CoreDataProperties.swift */,
+				78BB8AEF1B7E685A007F73C3 /* Person.swift */,
+				78BB8AF01B7E685A007F73C3 /* Device+CoreDataProperties.swift */,
+				78BB8AF11B7E685A007F73C3 /* Device.swift */,
 				78BB8AC51B7D6C54007F73C3 /* AppDelegate.swift */,
 				78BB8AC71B7D6C54007F73C3 /* DevicesTableViewController.swift */,
 				78BB8ADC1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift */,
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78BB8AC11B7D6C54007F73C3 /* CoreData_TestApplication */ = {
+		78BB8AC11B7D6C54007F73C3 /* CoreData-TestApplication */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78BB8AD71B7D6C54007F73C3 /* Build configuration list for PBXNativeTarget "CoreData_TestApplication" */;
+			buildConfigurationList = 78BB8AD71B7D6C54007F73C3 /* Build configuration list for PBXNativeTarget "CoreData-TestApplication" */;
 			buildPhases = (
 				78BB8ABE1B7D6C54007F73C3 /* Sources */,
 				78BB8ABF1B7D6C54007F73C3 /* Frameworks */,
@@ -100,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = CoreData_TestApplication;
+			name = "CoreData-TestApplication";
 			productName = myDevices;
-			productReference = 78BB8AC21B7D6C54007F73C3 /* CoreData_TestApplication.app */;
+			productReference = 78BB8AC21B7D6C54007F73C3 /* CoreData-TestApplication.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,14 +112,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "Razeware LLC";
+				ORGANIZATIONNAME = LeanRob;
 				TargetAttributes = {
 					78BB8AC11B7D6C54007F73C3 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
 			};
-			buildConfigurationList = 78BB8ABD1B7D6C54007F73C3 /* Build configuration list for PBXProject "CoreData_TestApplication" */;
+			buildConfigurationList = 78BB8ABD1B7D6C54007F73C3 /* Build configuration list for PBXProject "CoreData-TestApplication" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78BB8AC11B7D6C54007F73C3 /* CoreData_TestApplication */,
+				78BB8AC11B7D6C54007F73C3 /* CoreData-TestApplication */,
 			);
 		};
 /* End PBXProject section */
@@ -157,11 +157,11 @@
 			files = (
 				78BB8ADD1B7E4D5D007F73C3 /* DeviceDetailTableViewController.swift in Sources */,
 				78BB8AC81B7D6C54007F73C3 /* DevicesTableViewController.swift in Sources */,
-				E170801B1C10221500B30F39 /* Person+CoreDataProperties.swift in Sources */,
-				E170801E1C10221500B30F39 /* Device.swift in Sources */,
+				78BB8AF21B7E685A007F73C3 /* Person+CoreDataProperties.swift in Sources */,
+				78BB8AF51B7E685A007F73C3 /* Device.swift in Sources */,
 				78BB8ACE1B7D6C54007F73C3 /* myDevices.xcdatamodeld in Sources */,
-				E170801C1C10221500B30F39 /* Person.swift in Sources */,
-				E170801D1C10221500B30F39 /* Device+CoreDataProperties.swift in Sources */,
+				78BB8AF31B7E685A007F73C3 /* Person.swift in Sources */,
+				78BB8AF41B7E685A007F73C3 /* Device+CoreDataProperties.swift in Sources */,
 				78BB8ADB1B7E4A2F007F73C3 /* PeopleTableViewController.swift in Sources */,
 				78BB8AC61B7D6C54007F73C3 /* AppDelegate.swift in Sources */,
 			);
@@ -278,8 +278,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = myDevices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.myDevices;
-				PRODUCT_NAME = CoreData_TestApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.leanrob.coredata-testapplication";
+				PRODUCT_NAME = "CoreData-TestApplication";
 			};
 			name = Debug;
 		};
@@ -289,15 +289,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = myDevices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.myDevices;
-				PRODUCT_NAME = CoreData_TestApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.leanrob.coredata-testapplication";
+				PRODUCT_NAME = "CoreData-TestApplication";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		78BB8ABD1B7D6C54007F73C3 /* Build configuration list for PBXProject "CoreData_TestApplication" */ = {
+		78BB8ABD1B7D6C54007F73C3 /* Build configuration list for PBXProject "CoreData-TestApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78BB8AD51B7D6C54007F73C3 /* Debug */,
@@ -306,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78BB8AD71B7D6C54007F73C3 /* Build configuration list for PBXNativeTarget "CoreData_TestApplication" */ = {
+		78BB8AD71B7D6C54007F73C3 /* Build configuration list for PBXNativeTarget "CoreData-TestApplication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78BB8AD81B7D6C54007F73C3 /* Debug */,
